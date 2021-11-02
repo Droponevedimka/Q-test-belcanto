@@ -7,6 +7,10 @@
     src: url("fonts/FuturaPT-Medium.ttf")
 }
 @font-face {
+    font-family: "FuturaPT-Book";  
+    src: url("fonts/FuturaPT-Book.ttf")
+}
+@font-face {
     font-family: "Futura Regular";  
     src: url("fonts/FuturaPT-Medium.ttf")
 }
@@ -14,7 +18,7 @@
     font-family: "PTSans-Regular";  
     src: url("fonts/PTSans-Regular.ttf")
 }
-html,body{margin:0;padding:0; font-family: Futura PT ; width:100vw; background-color: #000; display: flex; align-items: center;}
+html,body{margin:0;padding:0; font-family: Futura PT ; width:100vw; height: 100%; background-color: #000; display: flex; align-items: center;}
 
 
 /* Превью */
@@ -50,6 +54,12 @@ html,body{margin:0;padding:0; font-family: Futura PT ; width:100vw; background-c
     z-index: 5;
 }
 
+.belcanto-logo{
+    position: relative;
+    display: block;
+    width: 20%;
+    margin-bottom: 3%;
+}
 
 .preview-title{
     line-height: 10vmin;
@@ -95,6 +105,23 @@ html,body{margin:0;padding:0; font-family: Futura PT ; width:100vw; background-c
 
 .preview-video{
     width: 100%;
+}
+
+.text-description{
+    position: relative;
+    font-size: 1.5vmin;
+    margin-top: 5%;
+    width: 70%;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.link-description{
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.link-description:hover{
+    color: rgba(255, 255, 255, 1);
 }
 
 .main-test{
@@ -153,8 +180,8 @@ html,body{margin:0;padding:0; font-family: Futura PT ; width:100vw; background-c
     color: #ffffff;
     margin-top: 0;
     max-width: 1120px;
-    font-size: 170%;
-    text-align: left;
+    font-size: 3vmin;
+    text-align: justify;
     font-family: PTSans-Regular;
     font-weight: 100;
  
@@ -180,7 +207,7 @@ html,body{margin:0;padding:0; font-family: Futura PT ; width:100vw; background-c
 
 .main-body{
     position: relative;
-    height: 75vh;
+    height: 75%;
     font-family: Futura PT Lite;
     display: flex;
     justify-content: center;
@@ -400,6 +427,7 @@ html,body{margin:0;padding:0; font-family: Futura PT ; width:100vw; background-c
 
 .item-bottom-audio{
     width: 80%;
+    height: 71%;
     float: left;
 }
 
@@ -409,9 +437,9 @@ html,body{margin:0;padding:0; font-family: Futura PT ; width:100vw; background-c
 
 .bottom-play-or-pause{
     position: relative;
-    height: 50px;
-    width: 50px;
+    height: 100%;    
     background-image: url('../img/play.svg');
+    background-size: contain;
     cursor: pointer;
     background-repeat: no-repeat;
     z-index: 6;
@@ -425,8 +453,8 @@ html,body{margin:0;padding:0; font-family: Futura PT ; width:100vw; background-c
 
 .bottom-play-or-pause-mob{
     position: absolute;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     background-image: url('../img/play-mob.png');
     cursor: pointer;
     background-size: cover;
@@ -440,7 +468,7 @@ html,body{margin:0;padding:0; font-family: Futura PT ; width:100vw; background-c
     position: relative;
     background: #555;
     left: 15%;
-    top:-23px;
+    top:-45%;
     border-radius: 5px;
     width: 78%;
   }
@@ -457,7 +485,7 @@ html,body{margin:0;padding:0; font-family: Futura PT ; width:100vw; background-c
     height: 7px;  
     position: relative;
     left: 15%;
-    top:-23px;
+    top:-45%;
     border-radius: 5px;
     width: 78%;
   }
@@ -471,11 +499,14 @@ html,body{margin:0;padding:0; font-family: Futura PT ; width:100vw; background-c
 
 .item-cheking{
     float: right;
-    width: 46px;
-    height: 46px;
+    width: 5.2vh;
+    height: 5.2vh;
     border: 2px solid #ffffff;
     border-radius: 50px;
     z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .item-check-img{
@@ -483,7 +514,7 @@ html,body{margin:0;padding:0; font-family: Futura PT ; width:100vw; background-c
 }
 
 .item-check{
-    margin: 16px 11px;   
+    
 }
 
 .item-background{
@@ -557,44 +588,52 @@ html,body{margin:0;padding:0; font-family: Futura PT ; width:100vw; background-c
     left: 0;
     top: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     object-fit: cover;
     object-position: right top;
-    z-index: 5;
+    z-index: 0;
+}
+
+.padding-left-5{
+    margin-left: 5%; 
 }
 
 .final-block{
     text-align: left;
     z-index: 6;
-    width: 1450px;
-    margin-left: 5%; 
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    min-height: 600px;
+    max-height: 950px;
+    max-width: 1650px;
+    position: absolute;
 }
 
 .final-block-top{
     position: relative;
     left:0;
-    top:5vw;
-    margin-bottom: 10vw;
-    width: 86%;
+    top:2vw;
+    margin-bottom: 8em;
 }
 
 .final-title{
     position: relative;
-    margin-top: 0;
-    width: 500px;
-    line-height: 9vmin;
-    font-size: 10vmin;
+    margin: 0;
+    width: 400px;
+    line-height: 0.9em;
+    font-size: 6em;
     color:#000;
     font-weight: bold;
 }
 
 .final-description{
-    width: 65vmin;
-    margin:-5vh 0 5vh 0;
+    width: 600px;
+    margin:2em 0 2em 0;
     color:#000;
     padding: 0;
     font-family: Futura PT Lite;
-    font-size: 2.5vmin;
+    font-size: 1.5em;
 }
 
 .final-bottom{
@@ -608,18 +647,23 @@ html,body{margin:0;padding:0; font-family: Futura PT ; width:100vw; background-c
     margin-top:20px;
 }
 
+.block-mail{
+    width: 76%;
+    display: inline-block;
+}
+
 .email{
     position: relative;
     float: left;
     left: 0;
     text-align: center;
     height: 80px;
-    width: 53vw;
+    width: 75%;
     border-radius: 50px 0 0 50px;
     background: transparent;
     border: 2px solid #fff;
     color: #fff;
-    font-size: 1.5vw;
+    font-size: 1.4em;
 }
 
 .email-black::-moz-placeholder {color: #000; /* Цвет подсказывающего текста */}
@@ -634,23 +678,18 @@ html,body{margin:0;padding:0; font-family: Futura PT ; width:100vw; background-c
 .email-white::-ms-input-placeholder { color: #fff; }
 .email-white::placeholder { color: #fff; } 
 
-.final-and-soc{
-    position: absolute;
-    display: block;
-    left:50vw;
-    width: 50vw;
-}
-
 .final-btn{
     display: inline-block;
     position: relative;
-    top: -20px;
-    width: 250px;
-    height: 55px;
+    width: 20%;
+    height: 80px;
+    line-height: 80px;
+    left: -5%;
     border-radius: 50px;
+    font-family: Futura PT;
+    cursor: pointer;
     background-color: #fff;
     color: #021E28;
-    padding-top: 25px;
     text-align: center;
     font-size: 25px;
     text-decoration: none;
@@ -659,8 +698,9 @@ html,body{margin:0;padding:0; font-family: Futura PT ; width:100vw; background-c
 .soc-items{     
     display: inline-block;
     position: relative;
-    left: 50px;
-    width: 300px;
+    left: 74%;
+    top: -80px;
+    width: 26%;
     height: 80px;
 }
 
@@ -695,7 +735,6 @@ html,body{margin:0;padding:0; font-family: Futura PT ; width:100vw; background-c
     /*  Центрируем и задаем z-index */
     position: fixed;
     display: flex;
-    overflow: auto;
     justify-content: center;
     top: 50%;
     left: 50%;
@@ -720,18 +759,24 @@ html,body{margin:0;padding:0; font-family: Futura PT ; width:100vw; background-c
      visibility: visible;
   }
 
+  .img-final-logo{
+    background: transparent;
+    height: 80px;
+    width: 80px;
+ }
+
 /* soc bottom */
 
 /* Wrapper */
 .icon-button {
 	background-color: white;
-    border-radius: 70px;
+    border-radius: 80px;
     color: #000000;
 	cursor: pointer;
 	display: inline-block;
 	font-size: 2.0rem;
-    height: 70px;
-    width: 70px;
+    height: 80px;
+    width: 80px;
 	line-height: 3.6rem;
 	margin: 0 5px;
 	position: relative;
@@ -743,11 +788,11 @@ html,body{margin:0;padding:0; font-family: Futura PT ; width:100vw; background-c
 .icon-button i {
 	background: none;
 	color: #000000;
-    height: 70px;
-    width: 70px;
+    height: 80px;
+    width: 80px;
 	z-index: 10;
 	left: 0;
-	line-height: 70px;
+	line-height: 80px;
 	position: absolute;
 	top: 0;
 	-webkit-transition: all 0.3s;
@@ -771,6 +816,44 @@ html,body{margin:0;padding:0; font-family: Futura PT ; width:100vw; background-c
     display: none;
 }
 
+.final-modal{
+    width: 100%;
+    height: 100%;
+    z-index: 101;
+    display: none;
+    justify-content: center;
+    align-items: center;    
+}
+
+.modal-block-result{
+    background: #292929;
+    width: 90%;
+    max-width: 1150px;
+    padding: 5% 5%;
+    color: #fff;
+}
+
+.modal-block-result_title{
+    font-size: 90px;
+    line-height: 80px;
+    margin-bottom: 3%;
+}
+
+.modal-block-result_description{
+    font-family: FuturaPT-Book;    
+    font-weight: 100;
+    font-size: 47px;
+    line-height: 47px;
+    margin-bottom: 3%;
+}
+
+.modal-block-result_what{
+    font-size: 33px;
+    text-decoration: underline;
+    font-family: FuturaPT-Book;
+
+}
+
 @media screen and (max-width:1580px){
     .preview-right{
         right: 1vw;
@@ -779,11 +862,21 @@ html,body{margin:0;padding:0; font-family: Futura PT ; width:100vw; background-c
         margin-bottom: 5vh;
         width: 37vw;
     }
-    .final-description{
-        width: 55vmin;
-    }
     .preview-title{
         
+    }    
+}
+
+@media screen and (max-width:1450px){
+    .final-title{
+        font-size: 10vh;
+    }
+    .final-description{
+        font-size: 2.5vh;
+        margin-bottom: 10vh;
+    }
+    .final-block-top{
+        margin-bottom: 15vh;
     }
 }
 
@@ -797,11 +890,11 @@ html,body{margin:0;padding:0; font-family: Futura PT ; width:100vw; background-c
     .preview-description{
         margin-bottom: 5vh;       
     }
-    .final-description{
-        width: 35vmin;
-    }
     .final-title{
-        font-size: 8vmin;
+        font-size: 4.5em;
+    }
+    .final-description{
+        width: 540px;
     }
     .preview-title{
         font-size: 6.5vw;
@@ -816,41 +909,77 @@ html,body{margin:0;padding:0; font-family: Futura PT ; width:100vw; background-c
     .item-description{
         font-size: 0.8em;
     }
+    .final-btn{
+        left: -7%;
+        width: 25%;
+    }
 
+}
+
+@media screen and (max-width: 1230px){
+    .final-description{
+        width: 390px;
+    }
+    .email{
+        font-size: 1.2em;
+    }
+    .modal-block-result_title{
+        font-size: 7.5vw;
+        line-height: 7vw;
+        margin-bottom: 3%;
+    }
+    
+    .modal-block-result_description{        
+        font-size: 5vw;
+        line-height: 5vw;
+        margin-bottom: 3%;
+    }
+    
+    .modal-block-result_what{
+        font-size: 4vw;    
+    }
 }
 
 @media screen and (max-width: 1120px){
     .final-video{
-        position: absolute;
+        position: fixed;
         right: 0;
-        height: 53vh;          
+        height: 55%;          
         object-position: right top;  
     }
     .final-block{
-        margin-top: 21vh;
+        padding-top: 8vw;
+        height: calc(100% - 8vw);
+    }
+    .final-title{
+        width: 40vw;
+        font-size: 7vw;
     }
     .final-description{
         width: 90vw;
     }
     .dropdown{
         position: absolute;
-        width: 30vmin;
-        top: 15vmin;
-        left:53vw;
+        width: 18vw;
+        height: 6vw;
+        line-height: 6vw;
+        font-size: 1.5vw;
+        top: 26vw;
+        left:63vw;
     }
     .final-description{
         position: absolute;
-        margin-top: -4vh;
-        font-size: 2.2vmin;
-        line-height: 2.9vmin;
+        margin-top: 14vw;
+        font-size: 3vw;
+        line-height: 3vw;
     }
     .final-bottom{
         
         position: relative;
         display: block;
-        top: 15vh;
+        top: 25vw;
     }
-    .final-bottom:before{
+    .final-bottom-white:before{
         content: '';
         position: fixed;
         left: 0;
@@ -858,6 +987,15 @@ html,body{margin:0;padding:0; font-family: Futura PT ; width:100vw; background-c
         width: 100%;
         border-top: 2px solid #fff; 
     }
+    .final-bottom-black:before{
+        content: '';
+        position: fixed;
+        left: 0;
+        margin-top: -2%;
+        width: 100%;
+        border-top: 2px solid #000; 
+    }
+    
     .final-and-soc{       
        position: relative;
        display: block;
@@ -867,7 +1005,8 @@ html,body{margin:0;padding:0; font-family: Futura PT ; width:100vw; background-c
        top: 2vh;
     }
     .soc-items{
-        left:20px;       
+        width: 40%;
+        left:35%;     
         
     }
     .email{
@@ -876,6 +1015,10 @@ html,body{margin:0;padding:0; font-family: Futura PT ; width:100vw; background-c
         width: 90vw;
     }
     .final-btn{
+        margin-top: 2%;
+        margin-left: 5%;
+        width: 40%;
+        font-size: 1.9vw;
     }
     .tinal-btn-promo{
         display: inherit;
@@ -883,50 +1026,71 @@ html,body{margin:0;padding:0; font-family: Futura PT ; width:100vw; background-c
     .preview-title{
         line-height: 6.5vw;
     }
+    .text-description{
+        font-size: 1.2vmin;
+    }
     .preview-left {
         margin-left: 3%;
     }
     .preview-description{
-        font-size: 2.7vmin;
+        font-size: 2.2vmin;
         width: 30vw;
     }
+    .icon-button i{
+        font-size: 80%;
+    }
+    .modal-block-result{        
+        width: 90%;        
+    }    
+}
 
+@media screen and (max-width: 1020px){
+    .ask{
+        padding: 0 8%;
+        font-family: PTSans-Regular;
+        font-size: 2.8vw;
+    }
+    .main-body{
+        height: 79%;
+        display: block;
+    }
+    .main-center-mob{
+        height: 100%; 
+        min-height:  800px;
+    }
 }
 
 
 @media screen and (max-width: 900px) {
-    .preview-left{position: absolute; bottom: 7vh; width: 90vw;}
+    .preview-left{position: absolute; top: 45%; width: 90vw;}
     .preview-title{width: 100%;font-size: 9.5vw; line-height: 9vw; line-height: auto;}
     .preview-description{width: 100%; margin: 5% 0 7% 0;line-height: 2.7vmax; font-size: 2.2vmax;}
     .preview-right{ width: 30vh; bottom: 55%; right: 3vw; }     
     .preview{ background-size: 100% 45%;}
 
+    .text-description{
+        width: 100%;
+        margin-left: 3%;
+    }
+
+    .belcanto-logo{
+        display: none;
+    }
     .preview-bottom{
         width: 30vw;
         font-size: 2.2vmax;
         height: 8vw;
-        line-height: 8vw;}
-        .ask{ padding: 0 8%;
-        font-family: PTSans-Regular;}
-    .main-body{
-        height: 71%;
-    }
-    .main-center-mob{
-        height: 100%;     
-        min-height:  600px;
-    }
-    
+        line-height: 8vw;}   
     .main-top{
         height: 21%;
+        min-height: 200px;
     }
     .main-top:before{
         height: 21%;
+        min-height: 200px;
     }
     .top-left{
         height: 100%;
-    }
-    .ask{
-        font-size: 2.4vh;
     }
    }
 
@@ -937,6 +1101,7 @@ html,body{margin:0;padding:0; font-family: Futura PT ; width:100vw; background-c
     }
     .main-center-mob{
         align-items: center;
+        min-height:  600px;
     }
     .preview-description{width: 100%; margin: 5% 0 10% 0;line-height: 2.7vmax; font-size: 2.2vmax;}
     .preview-bottom{
@@ -949,7 +1114,6 @@ html,body{margin:0;padding:0; font-family: Futura PT ; width:100vw; background-c
     }
 
     .top-left{
-        height: 21vh;
         width: auto;
     }
     .ask{
@@ -960,15 +1124,15 @@ html,body{margin:0;padding:0; font-family: Futura PT ; width:100vw; background-c
     .final-video{
         margin-top: 0;
         width: 100%;           
-        background-size: cover;        
+        background-size: contain;        
         object-fit:contain;  
         object-position: top right;
 
     }
     .final-block{
-        margin-top: 40vw;
-        margin-left: 10vw;
+        margin-top: 0;
         top: 20vh;
+        height: calc(100% - 20vh - 8vw);
     }
     .final-description{      
         position: relative;  
@@ -1004,16 +1168,21 @@ html,body{margin:0;padding:0; font-family: Futura PT ; width:100vw; background-c
         width: 100vw;      
     }
     .soc-items{
-        width: 34vw;  
-        left: 1vw; 
+        width: 40vw;  
+        left: 50vw; 
+        top: -10vw;
         height: auto;
             
     }
+    .img-final-logo{
+        width: 10vw;
+        height: 10vw;
+    }
     .icon-button, .icon-button i{
-        width: 13vw;
-        height: 13vw;
-        line-height: 13vw;
-        font-size: 6vw;
+        width: 10vw;
+        height: 10vw;
+        line-height: 10vw;
+        font-size: 4vw;
     }
     .email{
         margin-top: 2vh;
@@ -1021,11 +1190,11 @@ html,body{margin:0;padding:0; font-family: Futura PT ; width:100vw; background-c
         font-size: 3vw;
     }
     .final-btn{
-        top:-21px;
-        height: 13vw;
+        height: 10vw;
         margin-right: 10vw;
+        margin-top: 5%;
         width: 47vw;
-        line-height: 13vw;
+        line-height: 10vw;
         padding: 0;
         font-size: 2.7vw;
     }
@@ -1040,6 +1209,16 @@ html,body{margin:0;padding:0; font-family: Futura PT ; width:100vw; background-c
 }
 
 @media screen and (max-width: 580px){
+    .main-top{
+        min-height: 135px;
+    }
+    .main-top:before{
+        min-height: 140px;
+    }
+
+    .main-center-mob{
+        min-height:  570px;
+    }
     #owl-demo{
         width: 85vw;
     }
@@ -1048,7 +1227,23 @@ html,body{margin:0;padding:0; font-family: Futura PT ; width:100vw; background-c
     }
 }
 
+@media screen and (max-width: 450px){
+
+    .main-center-mob{
+        min-height:  400px;
+    }
+}
+
 @media screen and (max-height: 320px){
+    .main-center-mob{
+        min-height:  550px;
+    }
+    .main-top{
+        min-height: 105px;
+    }
+    .main-top:before{
+        min-height: 110px;
+    }
     .item-img-mob{
         width: auto;
         height: 20%;

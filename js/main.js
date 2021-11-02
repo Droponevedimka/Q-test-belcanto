@@ -9,7 +9,7 @@ var _playOrPause = true;
     indexBackground = 1;
     timer = null;
 
-    if (parseInt(window.outerWidth) < 900 ) {
+    if (parseInt(window.outerWidth) < 1020 ) {
         document.getElementById('video').src = "video/alfa_mob.gif";
         mobOrDesk = false;}
   
@@ -80,6 +80,7 @@ function output_resul(index){
             }
         document.getElementById('final-modal-block').style.backgroundColor = "#000";
         document.getElementById('final-title').innerHTML = '<span class="text-white">Вы — настоящий романтик!</span>';
+        document.getElementById('final-bottom').classList.add('final-bottom-white');
         document.getElementById('final-description').innerHTML = '<span class="text-white">Вы очень эмоциональны и чувственны! Вы бы отлично сошлись с Густавом Климтом, Микеланджело и Антонио Вивальди. Не верится? Приходите на «Звучащие полотна» Фонда Бельканто и убедитесь сами.</span>';
         document.getElementById('mail').classList.add('email-white');
         break;  
@@ -93,6 +94,7 @@ function output_resul(index){
         document.getElementById('final-modal-block').style.backgroundColor = "#e4dece";
         document.getElementById('final-title').innerHTML = 'Вы — настоящий философ!';
         document.getElementById('dropdown').style.color = "#fff";
+        document.getElementById('final-bottom').classList.add('final-bottom-black');
         document.getElementById('dropdown').style.backgroundColor = "#000";
         document.getElementById('mail').style.border = "2px solid #000";
         document.getElementById('mail').style.color = "#000";
@@ -114,8 +116,9 @@ function output_resul(index){
             }
         document.getElementById('final-modal-block').style.backgroundColor = "#fff";       
         document.getElementById('final-title').innerHTML = 'Вы — настоящий мечтатель!';
-        document.getElementById('final-description').innerHTML = 'С трепетной душой и открытым сердцем! Вашими друзьями охотно стали бы Клод Моне, Фредерик Шопен и Николай Рерих. Убедитесь сами — приходите на концерты «Звучащие полотна» от Фонда Бельканто.';
+        document.getElementById('final-description').innerHTML = 'С трепетной душой и открытым сердцем! Вашими друзьями охотно стали бы Клод Моне, Фридерик Шопен и Николай Рерих. Убедитесь сами — приходите на концерты «Звучащие полотна» от Фонда Бельканто.';
         document.getElementById('dropdown').style.color = "#fff";
+        document.getElementById('final-bottom').classList.add('final-bottom-black');
         document.getElementById('dropdown').style.backgroundColor = "#000";
         document.getElementById('mail').style.border = "2px solid #000";
         document.getElementById('mail').style.color = "#000";
@@ -135,6 +138,7 @@ function output_resul(index){
                 document.getElementById('final-video').src = 'video/belcanto_rebel_mob.mp4';
             }
         document.getElementById('final-modal-block').style.backgroundColor = "#000";
+        document.getElementById('final-bottom').classList.add('final-bottom-white');
         document.getElementById('final-title').innerHTML = '<span class="text-white">Вы — настоящий бунтарь!</span>';
         document.getElementById('final-description').innerHTML = '<span class="text-white">Прохожим стоит быть аккуратнее: стены и другие преграды рискуют обрушиться под вашим напором. Носителями такого революционного духа были Эдгар Дега, Винсент Ван Гог, Камиль Сен-Санс. Оцените творчество родственных душ на мероприятиях «Звучащие полотна» Фонда Бельканто.</span>';
         document.getElementById('mail').classList.add('email-white');
@@ -151,6 +155,15 @@ function playOrPause(e){
     let audio = document.getElementById('audio-mpe3-'+e);
     let audioButton = document.getElementById('audio-button-'+e);
     if(_playOrPause){  
+
+
+        dataLayer.push({
+            'event':'artquiz',
+                'eventCategory':'тест_искусство', 
+                'eventAction':'контент', 
+                'eventLabel': document.getElementById(`item-${e}-title`).textContent// заголовок блока с вариантом ответа, который выбрал пользователь как ответ на вопрос теста
+        });
+        
         
         for(i=1; i<5; i++){
             if(i!=e) {                
@@ -182,9 +195,11 @@ function playOrPause(e){
           });
         
           audio.addEventListener('timeupdate', function() {
-            var duration =  audio.duration;
-            if (duration > 0) {                
-              document.getElementById('progress-amount-'+e).style.width = ((audio.currentTime / duration)*100) + "%";
+            if(mobOrDesk){
+                var duration =  audio.duration;
+                if (duration > 0) {                
+                document.getElementById('progress-amount-'+e).style.width = ((audio.currentTime / duration)*100) + "%";
+                }
             }
           });
 
@@ -200,25 +215,50 @@ function playOrPause(e){
 }
 
 function next_test(item){
-    if(item == 'mobil'){
-        item = parseInt($(".owl-item.active").children('.item-mob').attr('data-id'));  
-        if(lvl == '7'){    
-            document.getElementById('btn-next-mob').innerHTML = `<div href="#" id="btn" onClick="next_test('mobil')" class="test-next-mob js-open-modal" data-modal="2">Завершить</div>`;
-        }
-    } else{        
-        item = $(`#${item}`).attr("data-id");
-    }
-    result_test[item]++;
-    
-    
+    var meta = item
+   
     if (lvl < 8){
-        visible_item(data[lvl]);
-        lvl++;    
+ 
+        if(item == 'mobil'){
+            item = parseInt($(".owl-item.active").children('.item-mob').attr('data-id'));    
+            meta = parseInt($(".owl-item.active").children('.item-mob').attr('id-mob')); 
+            if(lvl == '7'){    
+                document.getElementById('btn-next-mob').innerHTML = `<div href="#" id="btn" onClick="next_test('mobil')" class="test-next-mob js-open-modal" data-modal="2">Завершить</div>`;
+            }
+        } else{        
+            item = $(`#${item}`).attr("data-id");              
+        }
+        
+        result_test[item]++;
+
+        visible_item(data[lvl]);    
+       
+       
+        
+        
     } 
 
-    if (lvl == 8) {
-        output_resul(indexOfMax(result_test));
+    if(lvl < 9){
+        if(item == 'mobil'){
+            meta = parseInt($(".owl-item.active").children('.item-mob').attr('id-mob')); 
+        }
+        dataLayer.push({
+            'event':'artquiz',
+                'eventCategory':'тест_искусство', 
+                'eventAction':meta, // порядковый номер вопроса в тесте на который отвечает пользователь
+                'eventLabel':data[Number(lvl)-1].items[Number(meta)-1].titel, // заголовок блока с вариантом ответа, который выбрал пользователь как ответ на вопрос теста
+                'eventYM': lvl // порядковый номер вопроса в тесте на который отвечает пользователь. Необходимо передавать значение переменной по стандарту art_quiz_q1 - где цифра это порядковый номер вопроса.
+        });  
+        
     }
+    lvl++; 
+    
+    
+    if (lvl == 8) {
+        output_resul(indexOfMax(result_test));        
+    }
+    
+
 }
 
 function visible_item(item){    
@@ -236,7 +276,7 @@ function visible_item(item){
                 document.getElementById('mob-'+option.id).innerHTML = `
                 <div id="item-${option.id}-title" class="item-title-mob">${option.titel} <br> <span class="item-text-bold">${option.name}</span></div>
                 <div class="item-mob-center-play">
-                <img src="img/person/test-${item.id}/person-id-${option.id}.jpg" class="item-img-mob"/>
+                <img src="img/person/test-${item.id}/person-id-mob-${option.id}.jpg" class="item-img-mob"/>
                 <div id='audio-button-${option.id}' class='bottom-play-or-pause-mob' onclick='playOrPause(${option.id})'></div>
                 </div>
                 <audio id='audio-mpe3-${option.id}' class='audio-style' src='audio/test-${item.id}/audio-${option.id}.mp3' crossorigin>Your browser does not support the audio element.</audio>
@@ -260,7 +300,7 @@ function visible_item(item){
     {
         
         document.getElementById('round').style.display = 'flex';
-        document.getElementById('top-left').style.width = "76vw";
+        document.getElementById('top-left').style.width = "70vw";
         document.getElementById('round').innerHTML = item.id+"/8";
         document.getElementById('main-center-mob').style.display = 'none';
         document.getElementById('main-center').style.display = 'flex';
@@ -349,7 +389,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
         window.onresize = () => {            
             
-                if (parseInt(window.outerWidth) < 900 ){
+                if (parseInt(window.outerWidth) < 1020 ){
                     mobOrDesk = false; 
                     document.getElementById('video').src = "video/alfa_mob.gif";
                     visible_item(data[lvl-1]);                                                            
@@ -378,7 +418,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if(lvl < 8){
                     round.innerHTML = '<img onClick="next_test('+result_item+')" src="img/test-next.svg" class="test-next"/>';
                 }else{
-                    round.innerHTML = '<img id="btn" src="img/test-next.png" class="test-next js-open-modal" data-modal="2"/>'
+                    round.innerHTML = '<img id="btn" onClick="next_test('+result_item+')" src="img/test-next.png" class="test-next js-open-modal" data-modal="2"/>'
                 }                           
             });            
  

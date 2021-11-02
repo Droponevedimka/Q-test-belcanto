@@ -11,21 +11,42 @@
     <link href="style/owl.theme.css" rel="stylesheet">
     <link href="style/main.css" rel="stylesheet"/>
 
+
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-PSVSWGT');</script>
+        <!-- End Google Tag Manager -->
+        
+
+
 </head>
 <body>
+
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PSVSWGT"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
 
     <div id="preview" class="preview">
         
         <div class="preview-background">
             <div class="preview-left">
+               <a href="https://www.belcantofund.com" title="Belcanto"> <img class="belcanto-logo" src="img/bel-logo.png"/> </a>
                 <div class="preview-title">
                         КТО ВЫ В МИРЕ ИСКУССТВА?
                 </div>
                 <div class="preview-description">
-                        Нет никаких сомнений в том, что человека определяет культура: музыка, которую он любит и картины, которыми наслаждается. Пройдите наш тест и узнайте, какому типу личности соответствуют ваши культурные предпочтения, и с каким деятелем искусства вы могли бы подружиться.
+                        Нет никаких сомнений в том, что человека определяет культура: музыка, которую он любит, и картины, которыми наслаждается. Пройдите наш тест и узнайте, какому типу личности соответствуют ваши культурные предпочтения, и с каким деятелем искусства вы могли бы подружиться.
                 </div>
-                <a href="#" id="btn" class="preview-bottom js-open-modal" data-modal="1"> Пройти тест </a>
-
+                <a href="#" id="btn" class="preview-bottom js-open-modal" onclick="btnOn()" data-modal="1"> Пройти тест </a>
+                <div class="text-description">
+                    Все авторские права на текст принадлежат музыкальному фонду «Бельканто». Нарушение авторских прав может влечь гражданско-правовую, административную и/или уголовную ответственность. Нажимая кнопку «Пройти тест», я подтверждаю свою дееспособность, соглашаюсь на обработку персональных данных музыкальному фонду «Бельканто». Данный тест носит исключительно развлекательный характер, не пытается никого оскорбить и ни к чему не призывает. Все права на произведения искусства принадлежат их авторам. 
+                    <a href="https://www.belcantofund.com/about/politika-konfidencialnosti/"  class="link-description">Подробнее.</a>
+                </div>
             </div>
             <div class="preview-right">
                 <img id="video" src="video/alfa.gif" class="preview-video" />
@@ -33,7 +54,7 @@
            </div>
         </div>
            
-
+        
            
 
     </div>
@@ -73,10 +94,10 @@
                     <div class="after-flex-mob">
                         <div class="flex-mob">
                             <div id="owl-demo" class="owl-carousel owl-theme">
-                                <div id="mob-1" class="item-mob"></div>
-                                <div id="mob-2" class="item-mob"></div>
-                                <div id="mob-3" class="item-mob"></div>
-                                <div id="mob-4" class="item-mob"></div>  
+                                <div id="mob-1" id-mob="1" class="item-mob"></div>
+                                <div id="mob-2" id-mob="2" class="item-mob"></div>
+                                <div id="mob-3" id-mob="3" class="item-mob"></div>
+                                <div id="mob-4" id-mob="4" class="item-mob"></div>  
                                                     
                             </div> 
                             <div class="next-and-prev">
@@ -96,30 +117,56 @@
     </div>
 
     <div id="final-modal-block" class="modal final-window" data-modal="2" style="background-color:#000;" >
-        <video id="final-video" loop muted autoplay class="final-video" >                   
-        </video>
+       
         <div id="final-block" class="final-block">
-            <div id="final-block-top" class="final-block-top">
-              <p id="final-title" class="final-title"> Вы - настоящий мечтатель1</p> 
-              <p id="final-description" class="final-description">С утретеий духой спрапвапав пав паы рыр па ры рфарав па</p>
-                <div id="dropdown"  class="dropdown">                        
-                    Выбрать билет                                      
-                </div> 
-            </div>
-            <div id="final-bottom" class="final-bottom">
-                
-                    <input id="mail" class="email" placeholder="Оставь e-mail и получите промокод на скидку 20%"/>
-                    <div class="final-and-soc">
-                    <a id="final-btn" href="#" class="final-btn"> Получить <span class="tinal-btn-promo">промо</span> <span class="tinal-btn-kod">код</span></a>
-                    <div class="soc-items">
-                            <a id="icon-button-1" href="#" class="icon-button facebook"><i id="icon-button-i-1" class="icon-facebook fab fa-facebook-f"></i></a>
-                            <a id="icon-button-2" href="#" class="icon-button vk"><i id="icon-button-i-2" class="icon-vk fab fa-vk"></i></a>                            
-                    </div>
-                    </div>
-                
+                <video id="final-video" loop muted autoplay class="final-video" >                   
+                    </video>
+            <div class="padding-left-5">       
+                <div id="final-block-top" class="final-block-top">
+                <p id="final-title" class="final-title"> Вы - настоящий мечтатель1</p> 
+                <p id="final-description" class="final-description">С утретеий духой спрапвапав пав паы рыр па ры рфарав па</p>
+                    <div id="dropdown"  class="dropdown">                        
+                       <a href="https://www.belcantofund.com/series/zvuchashchie-polotna/" onclick="checkTiket()" style="text-decoration: none; color: inherit;">Выбрать билет</a>                                      
+                    </div> 
+                </div>
+                <div id="final-bottom" class="final-bottom">
+                        <div class="block-mail"> 
+
+                                <input id="mail" class="email" type="email" placeholder="Оставьте e-mail и получите промокод на скидку 60%"/>
+                                <a  id="final-btn" onclick="give()" class="final-btn"> Получите <span class="tinal-btn-promo">промо</span><span class="tinal-btn-kod">код</span></a>
+                            
+                        </div>
+                                                            
+                        <div class="soc-items">
+                            <a href="https://www.belcantofund.com" onclick="clickLogo()" title="Belcanto"><img class="img-final-logo" src="img/bel-final-logo.png" /></a>
+                                <a id="icon-button-1" href="https://www.facebook.com/belcantofund" target="_blank" class="icon-button facebook"><i id="icon-button-i-1" class="icon-facebook fab fa-facebook-f"></i></a>
+                                <a id="icon-button-2" href="https://vk.com/belcantofund" target="_blank" class="icon-button vk"><i id="icon-button-i-2" class="icon-vk fab fa-vk"></i></a>                            
+                        </div>                   
+                    
+                </div>
             </div>
         </div>
     </div>
+
+    <div id="final-modal" class="final-modal" style="background-color:rgba(0,0,0,0.6);" >
+       <div class="modal-block-result">
+           <div class="access">
+                <div class="modal-block-result_title">
+                    Яркие эмоции ожидают вас на наших концертах!
+                </div>
+                <div class="modal-block-result_description">
+                    Мы уже отправили промокод <br>на вашу почту.
+                </div>
+                <div class="modal-block-result_what">
+                    Проверьте её
+                </div>
+            </div>
+            <div class="wrong">
+
+            </div>
+       </div>        
+    </div>
+
     <!-- Подложка под модальным окном -->
     <div class="overlay js-overlay-modal"></div>
 
@@ -127,5 +174,87 @@
     <script src="js/classie.js"></script>
     <script src="js/selectFx.js"></script>
     <script src="js/owl.carousel.js"></script>
+    <script>        
+        function btnOn(){
+            dataLayer.push({
+                'event':'artquiz',
+                    'eventCategory':'тест_искусство', 
+                    'eventAction':'клик', 
+                    'eventLabel':'начать',
+                    'eventYM':'art_quiz_start'
+            });
+
+        }
+
+        function validateEmail(email) {
+            var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        }
+
+        function validate() {            
+            var email = $("#mail").val();            
+
+            if (validateEmail(email)) {
+                $.ajax({
+                    url:'msg/index.php?mail='+email,
+                    success: function(data){
+                        console.log(data);                   }
+                    });
+                    dataLayer.push({
+                'event':'artquiz',
+                    'eventCategory':'тест_искусство', 
+                    'eventAction':'клик', 
+                    'eventLabel':'получить скидку',
+                    'eventYM':'get_discount'
+            });
+                document.getElementById('final-modal').style.display = 'flex';
+               
+            } else {
+                var x = 0;
+                var timerId = setInterval(() =>{
+                    x++;
+                    if(x%2 == 0){
+                        document.getElementById('mail').style.border = '2px solid #fff';
+                        document.getElementById('mail').style.color = '#fff';
+                    } else {
+                        document.getElementById('mail').style.border = '2px solid #bd0000';
+                        document.getElementById('mail').style.color = '#bd0000';
+                    }
+                    if(x == 8) {
+                        clearInterval(timerId);
+                        document.getElementById('mail').style.border = '2px solid #fff';
+                        document.getElementById('mail').style.color = '#fff';
+                    }
+                }, 100);
+               
+            }
+            return false;
+        }
+
+        function checkTiket(){
+            dataLayer.push({
+                'event':'artquiz',
+                    'eventCategory':'тест_искусство', 
+                    'eventAction':'клик', 
+                    'eventLabel':'выбрать билет',
+                    'eventYM':'select_ticket'
+            });
+
+        }
+
+        function give(){
+            validate();            
+        }
+
+        function clickLogo(){
+            dataLayer.push({
+                'event':'artquiz',
+                    'eventCategory':'тест_искусство', 
+                    'eventAction':'клик', 
+                    'eventLabel':'логотип'
+            });
+ 
+        }
+    </script>
 </body> 
 </html>
